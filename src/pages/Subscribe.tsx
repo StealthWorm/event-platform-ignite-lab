@@ -1,6 +1,7 @@
 import { FormEvent, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Logo } from "../components/Logo";
+import { IconReact } from "../components/IconReact";
 import { useCreateSubscriberMutation } from "../graphql/generated";
 
 export function Subscribe() {
@@ -26,11 +27,15 @@ export function Subscribe() {
 
   return (
     <div className="min-h-screen bg-blur bg-cover bg-no-repeat flex flex-col items-center">
-      <div className="w-full max-w-[1100px] flex items-center justify-between mt-20 mx-auto">
-        <div className="max-w-[640px]">
-          <Logo />
-
-          <h1 className="mt-8 text-[2.5rem] leading-tight">
+      <div className="lg:w-full lg:max-w-[1100px] lg:flex lg:items-center lg:justify-between lg:mt-20 lg:mx-auto sm:max-w-[100%] sm:flex-row">
+        <div className="lg:max-w-[640px] sm:max-w-[100%] sm:text-center sm:m-12">
+          <div className="sm:mx-[100px] sm:mb-[1.5rem]">
+            <Logo />
+          </div>
+          <div className="z-0 absolute lg:w-full lg:max-w-[1100px] lg:flex lg:justify-center">
+            <IconReact />
+          </div>
+          <h1 className="lg:mt-8 lg:text-[2.5rem] lg:leading-tight sm:text-[2rem]">
             Construa uma <strong className="text-blue-500">aplicação completa</strong>, do zero, com <strong className="text-blue-500">React</strong>
           </h1>
           <p className="mt-4 text-gray-200 leading-relaxed">
@@ -38,7 +43,7 @@ export function Subscribe() {
           </p>
         </div>
 
-        <div className="p-8 bg-gray-700 border border-gray-500 rounded">
+        <div className="z-0 p-8 bg-gray-700 border border-gray-500 rounded">
           <strong className="text-2xl mb-6 block">Inscreva-se gratuitamente</strong>
 
           <form onSubmit={handleSubscribe} className="flex flex-col gap-2 w-full">
